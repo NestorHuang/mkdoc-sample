@@ -42,9 +42,33 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">首頁</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
+    <li class="toctree-l2"><a class="reference internal" href="#e">查詢授權e首發票下載之發票字軌與期號</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project-layout">Project layout</a>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">上傳空白發票號</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">更新空白發票號</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">單筆訂單上傳(訂單版)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">訂單批次上傳(訂單版)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">發票批次上傳(發票版)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">多筆發票批次更新</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">新增發票並列印</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">查詢多筆發票最新處理狀態</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">查詢多筆發票上傳狀態</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_10">批次作廢發票</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_11">批次作廢空白發票(發票號跳號用)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_12">批次開立折讓單</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_13">批次作廢折讓單</a>
     </li>
     </ul>
                 </li>
@@ -88,21 +112,77 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+                <h1 id="e-api-api">e首發票發票版 API 說明文件 (此為 發票版本 API，前端系統完成取號開立時使用)</h1>
+<p>此文件 說明 e首發票 API 相關欄位說明文件。 實際使用仍以最新釋出版本為主。</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li>拋入已開立發票由e首發票進行後續整合作業(發票版)</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<pre><code>  採用的是HTTP POST的方式傳送，以 SHA256簽章值 驗證
+  發票版e首發票 API 測試區串接位置：
+  https://webapi.systemlead.com/terpapi 
+  其版本與正式區相符，惟正式區網址，待測試區測通後，將由業務人員提供。
 </code></pre>
+<h3 id="e">查詢授權e首發票下載之發票字軌與期號</h3>
+<pre><code>POST /Inquire/GetInvoiceIDList
+</code></pre>
+<p><a href="getinvoiceidlist.md">傳送格式說明</a></p>
+<h3 id="_1">上傳空白發票號</h3>
+<pre><code>POST /Append/TrackBlank
+</code></pre>
+<p><a href="trackblank">傳送格式說明</a></p>
+<h3 id="_2">更新空白發票號</h3>
+<pre><code>POST /Update/SetBlankInvoiceID
+</code></pre>
+<p><a href="setblankinvoice">傳送格式說明</a></p>
+<h3 id="_3">單筆訂單上傳(訂單版)</h3>
+<pre><code>POST /Append/Order
+</code></pre>
+<p><a href="receipt">傳送格式說明</a></p>
+<h3 id="_4">訂單批次上傳(訂單版)</h3>
+<pre><code>POST /Append/Orders
+</code></pre>
+<p><a href="receipt">傳送格式說明</a></p>
+<h3 id="_5">發票批次上傳(發票版)</h3>
+<pre><code>POST /Append/Invoices
+</code></pre>
+<p><a href="receipt">傳送格式說明</a></p>
+<h3 id="_6">多筆發票批次更新</h3>
+<pre><code>POST /Update/Invoices
+</code></pre>
+<p><font color="red">
+注意: 
+1.發票號為鍵值，除發票號與發票開立日期外其餘欄位皆可異動
+2.發票若已啟動上傳將無法更新發票
+</font>
+<a href="receipt">傳送格式說明</a></p>
+<h3 id="_7">新增發票並列印</h3>
+<pre><code>POST /Append/PrintInvoices
+</code></pre>
+<p><a href="receipt">傳送格式說明</a></p>
+<h3 id="_8">查詢多筆發票最新處理狀態</h3>
+<pre><code>POST /Inquire/GetInvoicesStatus
+</code></pre>
+<p><a href="getinvoicesstatus">傳送格式說明</a></p>
+<h3 id="_9">查詢多筆發票上傳狀態</h3>
+<pre><code>POST /Inquire/GetInvoicesAppendStatus
+</code></pre>
+<p><a href="getinvoicesappendstatus">傳送格式說明</a></p>
+<h3 id="_10">批次作廢發票</h3>
+<pre><code>POST /Update/CancelInvoices
+</code></pre>
+<p><a href="cancelinvoice">傳送格式說明</a></p>
+<h3 id="_11">批次作廢空白發票(發票號跳號用)</h3>
+<pre><code>POST /Append/BlankCancel
+</code></pre>
+<p><a href="cancelinvoice">傳送格式說明</a></p>
+<h3 id="_12">批次開立折讓單</h3>
+<pre><code>POST /Update/AllowanceInvoice
+</code></pre>
+<p><a href="insertallowance">傳送格式說明</a></p>
+<h3 id="_13">批次作廢折讓單</h3>
+<pre><code>POST /Update/CancelAllowances
+</code></pre>
+<p><a href="cancelallowance">傳送格式說明</a></p>
               
             </div>
           </div><footer>
@@ -151,5 +231,5 @@ docs/
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-01-21 02:38:32.081501+00:00
+Build Date UTC : 2026-01-21 02:40:40.669849+00:00
 -->
