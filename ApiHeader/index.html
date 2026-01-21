@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>API 標頭 (Header) - My Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "API \u6a19\u982d (Header)";
+        var mkdocs_page_input_path = "ApiHeader.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">首頁</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Signature/">簽章 (Signature)</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">API 標頭 (Header)</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#url">測試區URL</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">範例格式</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">欄位格式說明</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../b2bJsonSample/">B2B JSON 範例</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../b2cJsonSample/">B2C JSON 範例</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">API 標頭 (Header)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api">API 資料傳送格式:</h1>
+<p>注意:上傳已開立發票前，需要先與業務人員<strong>確認帳號已建立完成</strong>，並取得<strong>專屬加密Salt</strong>一組，以便後續上傳作業之進行。</p>
+<h3 id="url">測試區URL</h3>
+<pre><code>(2019-02-22 之後)
+https://webapi.systemlead.com/terpapi
+</code></pre>
+<h3 id="_1">範例格式</h3>
+<p>傳送資料格式說明以單筆資料Josn為例。</p>
+<pre><code>{
+    &quot;CompanyID&quot;:&quot;89430377&quot;,
+    &quot;Timestamp&quot;:&quot;1477585655&quot;,
+    &quot;Signature&quot;:&quot;89C480C1E4ACD1FD06C08D364404D74C014EEEDCDD8FE026EA2018B311A96D16&quot;,
+    &quot;Data&quot;:{[傳送資料]}
+}
+</code></pre>
+<p>傳送資料格式說明以多筆資料Josn為例。</p>
+<pre><code>[
+    {
+        &quot;CompanyID&quot;:&quot;89430377&quot;,
+        &quot;Timestamp&quot;:&quot;1477585655&quot;,
+        &quot;Signature&quot;:&quot;89C480C1E4ACD1FD06C08D364404D74C014EEEDCDD8FE026EA2018B311A96D16&quot;,
+        &quot;Data&quot;:{[傳送資料1]}
+    },
+    {
+        &quot;CompanyID&quot;:&quot;89430377&quot;,
+        &quot;Timestamp&quot;:&quot;1477585655&quot;,
+        &quot;Signature&quot;:&quot;89C480C1E4ACD1FD06C08D364404D74C014EEEDCDD8FE026EA2018B311A96D16&quot;,
+        &quot;Data&quot;:{[傳送資料2]}
+    },
+
+]
+</code></pre>
+<p><font color="red">*注意:傳送資料都需要被包裹API傳送格式內。</font></p>
+<h3 id="_2">欄位格式說明</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">欄位名稱</th>
+<th>欄位說明</th>
+<th>欄位型態</th>
+<th>欄位長度</th>
+<th>條件說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">CompanyID</td>
+<td>賣方公司統一編號</td>
+<td>Char</td>
+<td>8</td>
+<td>須為e首發票商家</td>
+</tr>
+<tr>
+<td style="text-align: right;">Timestamp</td>
+<td>時間戳記</td>
+<td>String</td>
+<td></td>
+<td>相關轉換請參考 [<a href="http://www.epochconverter.com/">http://www.epochconverter.com/</a>]</td>
+</tr>
+<tr>
+<td style="text-align: right;">Signature</td>
+<td>簽章驗證值</td>
+<td>String</td>
+<td></td>
+<td>產生方法可參閱<a href="https://slproject.gitbook.io/sl-einv-project/cht/signature">簽章驗證碼</a>說明</td>
+</tr>
+<tr>
+<td style="text-align: right;">Data</td>
+<td>傳送資料</td>
+<td>String</td>
+<td></td>
+<td>產生方法可參閱<a href="https://slproject.gitbook.io/sl-einv-project/cht/invoiceapilist">e首發票API清單</a>中各API的格式說明</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Signature/" class="btn btn-neutral float-left" title="簽章 (Signature)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../b2bJsonSample/" class="btn btn-neutral float-right" title="B2B JSON 範例">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Signature/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../b2bJsonSample/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

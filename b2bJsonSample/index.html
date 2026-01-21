@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>B2B JSON 範例 - My Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "B2B JSON \u7bc4\u4f8b";
+        var mkdocs_page_input_path = "b2bJsonSample.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">首頁</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Signature/">簽章 (Signature)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ApiHeader/">API 標頭 (Header)</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">B2B JSON 範例</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../b2cJsonSample/">B2C JSON 範例</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">B2B JSON 範例</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>B2B存證發票範本</p>
+<pre><code>{
+     &quot;CompanyID&quot;:&quot;89430377&quot;,
+     &quot;InvoiceID&quot;:&quot;AA12345678&quot;,
+     &quot;InvoiceDateTime&quot;:&quot;2016-10-27T16:27:34&quot;,
+     &quot;InvoiceFor&quot;:&quot;B&quot;,
+     &quot;BuyerID&quot;:&quot;26089959&quot;,
+     &quot;BuyerInvoiceTitle&quot;:&quot;矽聯科技股份有限公司南區營業所&quot;
+     &quot;BuyerName&quot;:&quot;Nestor Huang&quot;,
+     &quot;BuyerTelNo&quot;:&quot;077190888&quot;,         
+     &quot;BuyerAddress&quot;:&quot;高雄市鳳山區光遠路226號B1&quot;,         
+     &quot;BuyerEmail&quot;:&quot;nestor@systemlead.com&quot;,
+     &quot;CheckNumber&quot;:&quot;8943&quot;,
+     &quot;RelateNumber&quot;:&quot;OD2017032801&quot;,
+     &quot;PrintMark&quot;:&quot;N&quot;,
+     &quot;TaxType&quot;:&quot;1&quot;,
+     &quot;SalesAmount&quot;:5238,
+     &quot;TaxAmount&quot;:262,
+     &quot;TotalAmount&quot;:5500,
+     &quot;Details&quot;:[
+         {
+             &quot;DetailID&quot;:&quot;001&quot;,
+             &quot;ProductID&quot;:&quot;P1234&quot;,
+             &quot;ProductName&quot;:&quot;產品名稱&quot;,
+             &quot;Quantity&quot;:5.0,
+             &quot;UnitPrice&quot;:95.238,
+             &quot;SubTotal&quot;:476.19
+         },
+         {
+             &quot;DetailID&quot;:&quot;002&quot;,
+             &quot;ProductID&quot;:&quot;P2345&quot;,
+             &quot;ProductName&quot;:&quot;長度256個字&quot;,
+             &quot;Quantity&quot;:2.0,
+             &quot;UnitPrice&quot;:476.1904,
+             &quot;SubTotal&quot;:952.3808
+         },
+         {
+             &quot;DetailID&quot;:&quot;003&quot;,
+             &quot;ProductID&quot;:&quot;P3456&quot;,
+             &quot;ProductName&quot;:&quot;明細編號3碼&quot;,
+             &quot;Quantity&quot;:4.0,
+             &quot;UnitPrice&quot;:952.3809,
+             &quot;SubTotal&quot;:3809.5236,
+             &quot;Remark&quot;:&quot;貨品缺1件候補&quot;
+         }]
+}
+</code></pre>
+<p>回傳結果範例：</p>
+<pre><code>[
+  {
+ // 成功上傳
+    &quot;InvoiceID&quot;:&quot;CA89430015&quot;,
+    &quot;InvoiceDateTime&quot;:&quot;2017-06-12T12:34:56&quot;,
+    &quot;AuthCode&quot;:&quot;113B2C2E-81E3-41B5-B77F-656598B8BAEF&quot;
+  },
+  {
+ // 上傳失敗
+    &quot;InvoiceID&quot;:&quot;CA89430016&quot;,
+    &quot;InvoiceDateTime&quot;:&quot;2017-06-12T12:34:34&quot;,,
+    &quot;Message&quot;:,&quot;Append Inovice Error!!&quot;
+  },
+  {
+ // 驗證錯誤
+    &quot;InvoiceID&quot;:&quot;CA89430017&quot;,
+    &quot;InvoiceDateTime&quot;:&quot;2017-06-12T12:34:34&quot;,,
+    &quot;Message&quot;:,&quot;簽章驗證錯誤&quot;  
+  }
+]
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ApiHeader/" class="btn btn-neutral float-left" title="API 標頭 (Header)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../b2cJsonSample/" class="btn btn-neutral float-right" title="B2C JSON 範例">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ApiHeader/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../b2cJsonSample/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
