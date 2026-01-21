@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>收據 - My Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u6536\u64da";
+        var mkdocs_page_input_path = "Receipt.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">首頁</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Signature/">簽章 (Signature)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ApiHeader/">API 標頭 (Header)</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../b2bJsonSample/">B2B JSON 範例</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../b2cJsonSample/">B2C JSON 範例</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CancelAllowance/">註銷折讓</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../CancelInvoice/">註銷發票</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../cha-xun-fa-piao-shang-chuan-zhuang-tai/">查詢發票上傳狀態</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GetInvoiceIDList/">取得發票ID列表</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GetInvoicesAppendStatus/">取得發票附加狀態</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GetInvoicesStatus/">取得發票狀態</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GetInvoiceStatus/">取得單一發票狀態</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../InsertAllowance/">新增折讓</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../InvoiceApiList/">發票API列表</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../kong-bai-fa-piao-hao-shang-50b328-ke-hu-zi-ding-kong-bai-865f29/">空白發票號上傳(客戶自訂空白)</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">收據</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">範例格式</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">欄位說明</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">發票單頭</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#details">Details 發票明細內容格式說明</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SetBlankInvoice/">設定空白發票</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../shang-chuan-kong-bai-fa-piao-hao/">上傳空白發票號</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../TrackBlank/">追蹤空白</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">收據</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="_1">已開立發票資料上傳(單筆訂單上傳)</h1>
+<h3 id="_2">範例格式</h3>
+<p>B2B存證 <a href="https://slproject.gitbook.io/sl-einv-project/cht/b2bjsonsample">範例</a>
+B2C存證 <a href="https://slproject.gitbook.io/sl-einv-project/cht/b2cjsonsample">範例</a></p>
+<p><font color='red'>
+若使用的是 /Append/Order <br />
+則 不須傳入 <br />
+InvoiceID、InvoiceDateTime <br />
+但 必須傳入 <br />
+RelateNumber 且必須不重複 <br />
+</font></p>
+<p><font color='green'>
+若使用的是 /Append/PrintInvoices <br />
+則依照原開立發票格式上傳即可 <br />
+</font></p>
+<h3 id="_3">欄位說明</h3>
+<hr />
+<p>閱讀說明：</p>
+<p>B2B：指的是B2B交易所開立之發票(或三聯式發票)，開立對象為公司行號或機關組織，其中發票內容有計算稅額以供買受人作為進項扣抵。
+B2C：指的是B2C交易所開立之發票(或二聯式發票)，開立對象為自然人或機關組織，其中發票內容不計算稅額，僅供買受人做為購買憑證。</p>
+<p>B2B與B2C欄位標註說明：
+M: 必需提供資料
+CM: 條件符合時，必需提供資料
+O: 可選擇是否提供資料
+CO: 條件符合時，可選擇是否提供資料
+X: 不須提供資料</p>
+<hr />
+<h4 id="_4">發票單頭</h4>
+<table>
+<thead>
+<tr>
+<th>欄位名稱</th>
+<th>欄位說明</th>
+<th>欄位型態</th>
+<th>欄位長度</th>
+<th>B2B</th>
+<th>B2C</th>
+<th>條件說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CompanyID</td>
+<td>Seller BAN</td>
+<td>String</td>
+<td>10</td>
+<td>M</td>
+<td>M</td>
+<td>賣方統編(必須為e首發票客戶)</td>
+</tr>
+<tr>
+<td>InvoiceID</td>
+<td>Invoice Number</td>
+<td>String</td>
+<td>10</td>
+<td>M</td>
+<td>M</td>
+<td>發票字軌含流水號例如 QQ12345678</td>
+</tr>
+<tr>
+<td>InvoiceDateTime</td>
+<td>Invoice Create DateTime</td>
+<td>DateTime</td>
+<td></td>
+<td>M</td>
+<td>M</td>
+<td>發票開立時間(訂單版得不需傳入)，請採用ISO 8601格式傳遞UTC Time 例如：<br /> 2011-07-14T19:43:37</td>
+</tr>
+<tr>
+<td>InvoiceFor</td>
+<td>Invoice For Buyer</td>
+<td>String</td>
+<td>1</td>
+<td>M</td>
+<td>M</td>
+<td>發票開立對象，使用B2B存證填寫B，使用B2C存證填寫C</td>
+</tr>
+<tr>
+<td>BuyerID</td>
+<td>Buyer BAN</td>
+<td>String</td>
+<td>10</td>
+<td>M</td>
+<td>M</td>
+<td>買方統編，若為自然人須為 000000000 (10個0)</td>
+</tr>
+<tr>
+<td>BuyerInvoiceTitle</td>
+<td>Buyer Company Name</td>
+<td>String</td>
+<td>60</td>
+<td>M</td>
+<td>O</td>
+<td>買方公司名稱</td>
+</tr>
+<tr>
+<td>BuyerName</td>
+<td>BuyerName</td>
+<td>String</td>
+<td>30</td>
+<td>O</td>
+<td>O</td>
+<td>購買人姓名</td>
+</tr>
+<tr>
+<td>BuyerTelNo</td>
+<td>Buyer Telephone Number</td>
+<td>string</td>
+<td>26</td>
+<td>O</td>
+<td>O</td>
+<td>買方電話號碼，若要傳送簡訊則此欄位填寫行動電話號碼</td>
+</tr>
+<tr>
+<td>BuyerEmail</td>
+<td>Buyer Email</td>
+<td>String</td>
+<td>80</td>
+<td>O</td>
+<td>O</td>
+<td>買方電子郵件帳號，如果PrintMark=N此欄位與[買方電話號碼]兩者必填其一，否則電子發票通知無法寄送</td>
+</tr>
+<tr>
+<td>BuyerAddress</td>
+<td>Buyer Address</td>
+<td>String</td>
+<td>100</td>
+<td>O</td>
+<td>O</td>
+<td>如要寄送實體發票，此欄位必填</td>
+</tr>
+<tr>
+<td>CarrierType</td>
+<td>載具類型</td>
+<td>String</td>
+<td>6</td>
+<td>O</td>
+<td>O</td>
+<td>僅能為手機載具(3J0002)或自然人憑證(CQ0001)</td>
+</tr>
+<tr>
+<td>CarrierId</td>
+<td>載具編號</td>
+<td>String</td>
+<td>64</td>
+<td>O</td>
+<td>O</td>
+<td></td>
+</tr>
+<tr>
+<td>CheckNumber</td>
+<td>Invoice Check Number</td>
+<td>String</td>
+<td>4</td>
+<td>M</td>
+<td>X</td>
+<td>檢查碼，B2B 發票上必須列印四碼檢查碼(隨機四碼)，且檢查碼必須與上傳至整合服務平台相同，若未列印(PrintMark=N)且未傳送此欄位，將由e首發票系統產生</td>
+</tr>
+<tr>
+<td>RandomNumber</td>
+<td>Invoice Random Number</td>
+<td>String</td>
+<td>4</td>
+<td>X</td>
+<td>M</td>
+<td>隨機碼，B2C 發票上必須列印四碼隨機碼(隨機四碼)，且隨機碼必須與上傳至整合服務平台相同，若未列印(PrintMark=N)且未傳送此欄位，將由e首發票系統產生</td>
+</tr>
+<tr>
+<td>RelateNumber</td>
+<td>Relate Number</td>
+<td>String</td>
+<td>20</td>
+<td>O</td>
+<td>O</td>
+<td>關聯號碼，e首發票中可用來帶入關聯的訂單號碼</td>
+</tr>
+<tr>
+<td>PrintMark</td>
+<td>Print Mark</td>
+<td>String</td>
+<td>1</td>
+<td>M</td>
+<td>M</td>
+<td>是否已列印紙本發票給買受人，是填Y，否填N</td>
+</tr>
+<tr>
+<td>DonateMark</td>
+<td>Donate Mark</td>
+<td>String</td>
+<td>1</td>
+<td>X</td>
+<td>M</td>
+<td>是否捐贈發票，捐贈為Y，不捐贈為N，若已經列印(PrintMark=Y)則只能為N</td>
+</tr>
+<tr>
+<td>NPOBAN</td>
+<td>NPO BAN</td>
+<td>String</td>
+<td>7</td>
+<td>X</td>
+<td>CO</td>
+<td>捐贈單位愛心碼，若DonateMark=Y則必須填此欄位</td>
+</tr>
+<tr>
+<td>TaxType</td>
+<td>TaxType</td>
+<td>String</td>
+<td>1</td>
+<td>M</td>
+<td>M</td>
+<td>課稅別  1:應稅 2:零稅率 3:免稅</td>
+</tr>
+<tr>
+<td>SalesAmount</td>
+<td>Sales Amount</td>
+<td>Decimal</td>
+<td>(12,0)</td>
+<td>CO</td>
+<td>CO</td>
+<td>銷售未稅總額;(明細小計總額); 如果為應稅時填寫(TaxType=1)</td>
+</tr>
+<tr>
+<td>TaxAmount</td>
+<td>Tax Amount</td>
+<td>Decimal</td>
+<td>(12,0)</td>
+<td>CM</td>
+<td>CM</td>
+<td>總稅額; 如果為應稅時填寫(TaxType=1)</td>
+</tr>
+<tr>
+<td>ZeroTaxSalesAmount</td>
+<td>Zero Tax Sales Amount</td>
+<td>Decimal</td>
+<td>(12,0)</td>
+<td>CO</td>
+<td>CO</td>
+<td>零稅銷售總額,如特別關稅; 如果為零稅率時填寫(TaxType=2)</td>
+</tr>
+<tr>
+<td>CustomsClearanceMark</td>
+<td>Customs Clearance Mark</td>
+<td>String</td>
+<td>1</td>
+<td>CM</td>
+<td>CM</td>
+<td>通關方式 1:非經海關出口 2:經海關出口; 如果為零稅率時填寫(TaxType=2)</td>
+</tr>
+<tr>
+<td>BondedArea</td>
+<td>Bonded Area</td>
+<td>String</td>
+<td>1</td>
+<td>CM</td>
+<td>X</td>
+<td>零稅率註記 1:符合買受人為保稅區營業人 2:符合買受人為遠洋漁業營業人3:符合買受人為自由貿易港區營業人; 如果為零稅率時填寫(TaxType=2)</td>
+</tr>
+<tr>
+<td>BuyerRemark</td>
+<td>Buyer Remark</td>
+<td>String</td>
+<td>1</td>
+<td>CO</td>
+<td>CO</td>
+<td>買受人註記 1:得抵扣之進貨及費 2:得抵扣之固定資 3:不得抵扣之進貨及費用 4:不得抵扣之固定資口; 如果為零稅率時填寫(TaxType=2)選填此欄位</td>
+</tr>
+<tr>
+<td>FreeTaxSalesAmount</td>
+<td>Free Tax Sales Amount</td>
+<td>Decimal</td>
+<td>(12,0)</td>
+<td>CM</td>
+<td>CM</td>
+<td>免稅銷售總額,如農特產品銷售; 如果為免稅時填寫(TaxType=3)</td>
+</tr>
+<tr>
+<td>TotalAmount</td>
+<td>Total Amount</td>
+<td>Decimal</td>
+<td>(12,0)</td>
+<td>M</td>
+<td>M</td>
+<td>總金額(銷售未稅總額+總稅額);</td>
+</tr>
+<tr>
+<td>MainRemark</td>
+<td>發票備註</td>
+<td>String</td>
+<td>200</td>
+<td>O</td>
+<td>O</td>
+<td>發票備註</td>
+</tr>
+<tr>
+<td>UseFor</td>
+<td>選擇使用發票組別</td>
+<td>String</td>
+<td>2</td>
+<td>O</td>
+<td>O</td>
+<td>對應api/Inquire/GetInvoiceIDList中Details內的 UseFor欄位</td>
+</tr>
+<tr>
+<td>PrinterNo</td>
+<td>印表機編號</td>
+<td>String</td>
+<td>2</td>
+<td>O</td>
+<td>O</td>
+<td>指定列印的印表機號；例如: 00、01</td>
+</tr>
+<tr>
+<td>PrintWithDetail</td>
+<td>選擇是否列印明細</td>
+<td>String</td>
+<td>1</td>
+<td>O</td>
+<td>O</td>
+<td>2:僅列印發票，3:同時列印發票與明細</td>
+</tr>
+<tr>
+<td>CutDetail</td>
+<td>選擇C類發票明細是否裁斷</td>
+<td>Boolen</td>
+<td>1</td>
+<td>O</td>
+<td>X</td>
+<td>true(預設):明細裁斷，false:明細不裁</td>
+</tr>
+<tr>
+<td>Details</td>
+<td>發票明細內容</td>
+<td>Json Format Object</td>
+<td></td>
+<td>M</td>
+<td>M</td>
+<td>單身明細</td>
+</tr>
+</tbody>
+</table>
+<h4 id="details">Details 發票明細內容格式說明</h4>
+<table>
+<thead>
+<tr>
+<th>欄位名稱</th>
+<th>欄位說明</th>
+<th>欄位型態</th>
+<th>欄位長度</th>
+<th>B2B</th>
+<th>B2C</th>
+<th>條件說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DetailID</td>
+<td>Serial Nnmber</td>
+<td>String</td>
+<td>3</td>
+<td>M</td>
+<td>M</td>
+<td>三碼數字編碼，依序 001 002 不足三碼左邊補 0</td>
+</tr>
+<tr>
+<td>ProductID</td>
+<td>Product ID</td>
+<td>String</td>
+<td>20</td>
+<td>O</td>
+<td>O</td>
+<td>產品代碼</td>
+</tr>
+<tr>
+<td>ProductName</td>
+<td>Product DEscription</td>
+<td>string</td>
+<td>256</td>
+<td>M</td>
+<td>M</td>
+<td>產品名稱</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>Quantity</td>
+<td>Decimal</td>
+<td>(12,4)</td>
+<td>M</td>
+<td>M</td>
+<td>數量;</td>
+</tr>
+<tr>
+<td>UnitPrice</td>
+<td>Unit Price</td>
+<td>Decimal</td>
+<td>(12,4)</td>
+<td>M</td>
+<td>M</td>
+<td>單價; B2B單價未含稅額，B2C單價包含稅額</td>
+</tr>
+<tr>
+<td>SubTotal</td>
+<td>Sub Total</td>
+<td>Decimal</td>
+<td>(12,4)</td>
+<td>M</td>
+<td>M</td>
+<td>小計; (數量X單價)</td>
+</tr>
+<tr>
+<td>Remark</td>
+<td>明細備註</td>
+<td>String</td>
+<td>40</td>
+<td>O</td>
+<td>O</td>
+<td>每個明細的備註</td>
+</tr>
+</tbody>
+</table>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../kong-bai-fa-piao-hao-shang-50b328-ke-hu-zi-ding-kong-bai-865f29/" class="btn btn-neutral float-left" title="空白發票號上傳(客戶自訂空白)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../SetBlankInvoice/" class="btn btn-neutral float-right" title="設定空白發票">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../kong-bai-fa-piao-hao-shang-50b328-ke-hu-zi-ding-kong-bai-865f29/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../SetBlankInvoice/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

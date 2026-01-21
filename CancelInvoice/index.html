@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>B2C JSON 範例 - My Docs</title>
+    <title>註銷發票 - My Docs</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "B2C JSON \u7bc4\u4f8b";
-        var mkdocs_page_input_path = "b2cJsonSample.md";
+        var mkdocs_page_name = "\u8a3b\u92b7\u767c\u7968";
+        var mkdocs_page_input_path = "CancelInvoice.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -55,16 +55,22 @@
                 <li class="toctree-l1"><a class="reference internal" href="../b2bJsonSample/">B2B JSON 範例</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">B2C JSON 範例</a>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../b2cJsonSample/">B2C JSON 範例</a>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../CancelAllowance/">註銷折讓</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../CancelInvoice/">註銷發票</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">註銷發票</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">範例格式</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">欄位說明</a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -129,7 +135,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">B2C JSON 範例</li>
+      <li class="breadcrumb-item active">註銷發票</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -138,80 +144,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p>B2C存證發票範本</p>
+                <h1 id="_1">發票作廢上傳格式</h1>
+<h3 id="_2">範例格式</h3>
 <pre><code>{
-     &quot;CompanyID&quot;:&quot;89430377&quot;,
-     &quot;InvoiceID&quot;:&quot;AA12345678&quot;,
-     &quot;InvoiceDateTime&quot;:&quot;2016-10-27T16:27:34&quot;,
-     &quot;InvoiceFor&quot;:&quot;C&quot;,
-     &quot;BuyerID&quot;:&quot;0000000000&quot;,
-     &quot;BuyerName&quot;:&quot;Nestor Huang&quot;,
-     &quot;BuyerAddress&quot;:&quot;高雄市鳳山區光遠路226號B1&quot;,
-     &quot;BuyerTelNo&quot;:&quot;0912345678&quot;,
-     &quot;BuyerEmail&quot;:&quot;nestor@systemlead.com&quot;,
-     &quot;RelateNumber&quot;:&quot;OD2017032802&quot;,
-     &quot;PrintMark&quot;:&quot;N&quot;,
-     &quot;RandomNumber&quot;:&quot;3716&quot;,
-     &quot;SalesAmount&quot;:5500,
-     &quot;TaxType&quot;:&quot;1&quot;,
-     &quot;TaxAmount&quot;:0,
-     &quot;TotalAmount&quot;:5500,
-     &quot;Details&quot;:[
-         {
-             &quot;DetailID&quot;:&quot;001&quot;,
-             &quot;ProductID&quot;:&quot;P1234&quot;,
-             &quot;ProductName&quot;:&quot;產品名稱&quot;,
-             &quot;Quantity&quot;:5.0,
-             &quot;UnitPrice&quot;:100.0,
-             &quot;SubTotal&quot;:500.0
-         },
-         {
-             &quot;DetailID&quot;:&quot;002&quot;,
-             &quot;ProductID&quot;:&quot;P2345&quot;,
-             &quot;ProductName&quot;:&quot;長度256個字&quot;,
-             &quot;Quantity&quot;:2.0,
-             &quot;UnitPrice&quot;:500.0,
-             &quot;SubTotal&quot;:1000.0
-         },
-         {
-             &quot;DetailID&quot;:&quot;003&quot;,
-             &quot;ProductID&quot;:&quot;P3456&quot;,
-             &quot;ProductName&quot;:&quot;明細編號3碼&quot;,
-             &quot;Quantity&quot;:4.0,
-             &quot;UnitPrice&quot;:1000.0,
-             &quot;SubTotal&quot;:4000.0,
-             &quot;Remark&quot;:&quot;貨品缺1件候補&quot;
-         }]
+    &quot;SellerID&quot;: &quot;12345678&quot;,
+    &quot;InvoiceNumber&quot;: &quot;AA12345678&quot;,
+    &quot;CancelDate&quot;: &quot;2017-06-13T05:01:30&quot;,
+    &quot;CancelReason&quot;: &quot;訂單退貨&quot;,
 }
 </code></pre>
-<p>回傳結果範例：</p>
-<pre><code>[
-  {
- // 成功上傳
-    &quot;InvoiceID&quot;:&quot;CA89430015&quot;,
-    &quot;InvoiceDateTime&quot;:&quot;2017-06-12T12:34:56&quot;,
-    &quot;AuthCode&quot;:&quot;113B2C2E-81E3-41B5-B77F-656598B8BAEF&quot;
-  },
-  {
- // 上傳失敗
-    &quot;InvoiceID&quot;:&quot;CA89430016&quot;,
-    &quot;InvoiceDateTime&quot;:&quot;2017-06-12T12:34:34&quot;,,
-    &quot;Message&quot;:,&quot;Append Inovice Error!!&quot;
-  },
-  {
- // 驗證錯誤
-    &quot;InvoiceID&quot;:&quot;CA89430017&quot;,
-    &quot;InvoiceDateTime&quot;:&quot;2017-06-12T12:34:34&quot;,,
-    &quot;Message&quot;:,&quot;簽章驗證錯誤&quot;  
-  }
-]
-</code></pre>
+<h3 id="_3">欄位說明</h3>
+<ul>
+<li>SellerID: 賣方統編(必須為e首發票客戶)</li>
+<li>InvoiceNumber: 作廢發票號碼</li>
+<li>CancelDate: 發票作廢時間</li>
+<li>CancelReason: 作廢發票原因</li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../b2bJsonSample/" class="btn btn-neutral float-left" title="B2B JSON 範例"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../CancelAllowance/" class="btn btn-neutral float-right" title="註銷折讓">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../CancelAllowance/" class="btn btn-neutral float-left" title="註銷折讓"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../cha-xun-fa-piao-shang-chuan-zhuang-tai/" class="btn btn-neutral float-right" title="查詢發票上傳狀態">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -234,10 +188,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../b2bJsonSample/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../CancelAllowance/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../CancelAllowance/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../cha-xun-fa-piao-shang-chuan-zhuang-tai/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
